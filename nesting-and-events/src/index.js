@@ -13,12 +13,16 @@ const taskList = [
 
 
 function App() {
+  function toggleComplete(id){
+    console.log(`Task with the id '${id}' was clicked`);
+  }
+
   
    return (
       <Fragment>
         <h1 key="heading">Task List</h1>
         <TaskContainer>
-           { taskList.map((task)=> <Task title={task.title} isComplete ={task.isComplete} id={task}/>  )}
+           { taskList.map((task)=> <Task title={task.title} isComplete ={task.isComplete} id={task.id} toggleComplete={toggleComplete}/>  )}
                     </TaskContainer>
       </Fragment>
   );
